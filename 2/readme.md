@@ -1,3 +1,3 @@
 #### 2. Describe the runtime difference(s) between `for await (const a  of [p1, p2, p3]) { ... }` vs `[p1, p2, p3].forEach(async (p) {  await p })`
 
-The first example will wait for each promise to resolve synchronously. `a` will hold the value of each resolved promise. The second example will resolve all promises concurrently due to async not working for the callback function forEach. So at no where in the loop will a blocking like behaviour happen to wait for the results.
+The first example will wait for each promise to resolve synchronously. `a` will hold the value of each resolved promise. The second example will resolve all promises concurrently due to async not being supported with `Array.forEach`. So at no where in the loop will a blocking like behaviour happen to wait for the results.
