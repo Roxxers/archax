@@ -1,0 +1,7 @@
+#### 6. Describe some drawbacks or common pitfalls when using typescript in large applications
+
+Managing a large project with typescript can come with a number of issues. 
+
+One of these is if you try and run a monorepo. Trying to manage multiple node_modules and multiple tsconfigs that can differ from each other can be a struggle. This could mean that sections of your project drift over time on how they are transpiled and setup and even what features they support. Drifting on what tooling for linting, building, and deployment.
+
+In all large repos you may run into the issue of making types either too strict and granular or too vague and common. If they are too strict and need to be shared over a large project, your defined type might have several other types that are similar but used for different parts of the program. Meaning changes to these types are hard to maintain. Inversely you could make them too premissive and this would run the issue of the types being so vague that every time you use them you might need to check for every possible configuration that type could have to make sure it is in the correct one for your usecase. Types could be made more and more complex as your project grows and you deal with more edge cases. This run sthe risk of creating massive monolith types that become too generic and hard to maintain.
